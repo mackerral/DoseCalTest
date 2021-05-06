@@ -1,0 +1,119 @@
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+
+        function sum() {
+            var txtFirstNo = document.getElementById('txtFirstNo').value;
+            var txtSecondNo = document.getElementById('txtSecondNo').value;
+
+            var result = parseFloat(txtFirstNo) * parseFloat(txtSecondNo);
+            if (!isNaN(result)) {
+                document.getElementById('txtResult').value = result;
+                  sum2();
+            }
+        }
+
+        function sum2() {
+
+          var txtFirstNo = document.getElementById('txtconcMG').value;
+          var txtSecondNo = document.getElementById('txtResult').value;
+          var txtthird = document.getElementById('txtconcML').value;
+
+
+          var result2 = (parseFloat(txtSecondNo) * parseFloat(txtthird))/parseFloat(txtFirstNo);
+          if (!isNaN(result2)) {
+              document.getElementById('txtResult2').value = result2;
+              document.getElementById('txtResult3').value = parseFloat(result2/5);
+
+          }
+            document.getElementById("showBang").innerHTML =""
+
+        }
+
+        function numberSw() {
+
+             var txtSecondNo = document.getElementById('txtSecondNo').value;
+
+
+          }
+
+          function bottleCal() {
+
+
+
+        }
+        function myFunction() {
+  document.getElementById("demo").innerHTML = "day";
+  document.getElementById("demo1").innerHTML = "day";
+ document.getElementById("demo2").innerHTML = "day";
+ document.getElementById("demo3").innerHTML = "day";
+}
+function myFunction2() {
+document.getElementById("demo").innerHTML = "dose";
+document.getElementById("demo1").innerHTML = "dose";
+document.getElementById("demo2").innerHTML = "dose";
+document.getElementById("demo3").innerHTML = "1 eat";
+}
+  function myBID() {
+
+         var txt1 = document.getElementById('txtResult3').value;
+        document.getElementById("showBang").innerHTML = "kang la "+(parseFloat(txt1)/2) +"tsp   2 time/day"
+
+  }
+  function myTID() {
+
+         var txt1 = document.getElementById('txtResult3').value;
+        document.getElementById("showBang").innerHTML = "kang la"+(parseFloat(txt1)/3) +"tsp   3 time/day"
+
+  }
+  function myQID() {
+
+         var txt1 = document.getElementById('txtResult3').value;
+        document.getElementById("showBang").innerHTML = "kang la "+(parseFloat(txt1)/4) +"tsp   4 time/day"
+
+  }
+    </script>
+
+
+    <div style="border:1px solid gray;width: 600px; height:600px">
+       <h2>Dose calculator</h2> <button onclick="myFunction()">PerDay</button> <button onclick="myFunction2()">PerDose</button>
+       Dose Range <input type="text" id="Range1" placeholder="-"  size="5"/> - <input type="text" id="Range1" placeholder="-" size="5" />
+        <br />
+        <br />
+        <input type="text" id="txtFirstNo" placeholder="(kg)" onkeyup="sum()" size="5"/>kilogram
+        <input type="text" id="txtSecondNo" placeholder="dose/kg/day" onkeyup="sum()" size="5"/>dose/kg/<b id="demo"></b>
+
+        <br />
+        <div style="padding-top:10px">
+            dose/<b id="demo1"></b>:
+            <input type="text" id="txtResult" placeholder="readonly" readonly />  mg/<b id="demo2"></b>
+
+        </div>
+        <br />
+        <div style="padding-top:5px">
+          conc Drug  <input type="text" id="txtconcMG" placeholder="mg" onkeyup="sum2()" size="5" />mg per
+            <input type="text" id="txtconcML" placeholder="ml" onkeyup="sum2()"  size="5"/>ml
+              <br />
+
+        </div>
+        <div style="padding-top:5px">
+
+        </div>
+        <div style="padding-top:5px">
+
+         <p style="color:green"> Result  :</p>
+           <input type="text" id="txtResult2"  size="5"   />  ml or
+
+              <input type="text" id="txtResult3" onkeyup="numberSw" size="5"  /> teaspoon
+              per <b id="demo3"></b>
+        </div>
+
+        <div style="padding-top:5px">
+
+          <button onclick="myBID()">BID</button>  <button onclick="myTID()">TID</button>  <button onclick="myQID()">QID</button>
+
+<p id="showBang"></p>
+
+        </div>
+
+
+      </div>
