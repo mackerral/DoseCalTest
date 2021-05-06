@@ -30,9 +30,36 @@
         }
 
         function numberSw() {
+        //  document.getElementById("demo").innerHTML = "dayyyyyy";
+          //   document.getElementById('txtResult').value = "555"
 
-             var txtSecondNo = document.getElementById('txtSecondNo').value;
+            var teaspoon = document.getElementById('txtResult3').value;
 
+
+            var concmg =  document.getElementById('txtconcMG').value;
+            var concml =  document.getElementById('txtconcML').value;
+
+            var resulter = (parseFloat(teaspoon*5)* parseFloat(concmg))/parseFloat(concml)
+              var resulterML = parseFloat(teaspoon*5)
+
+            document.getElementById('txtResult').value = resulter;
+              document.getElementById('txtResult2').value = resulterML;
+
+
+
+            var kgXdose = document.getElementById('txtResult').value;
+
+            var kg = document.getElementById('txtFirstNo').value;
+
+          //  var return = kgXdose/kg
+               var result2 = parseFloat(kgXdose/kg);
+            document.getElementById('txtSecondNo').value = result2;
+
+
+            document.getElementById("showBang").innerHTML =""
+
+             //5 ml  120 mg
+             //tsp*5 ml  .... mg
 
           }
 
@@ -56,19 +83,19 @@ document.getElementById("demo3").innerHTML = "1 eat";
   function myBID() {
 
          var txt1 = document.getElementById('txtResult3').value;
-        document.getElementById("showBang").innerHTML = "kang la "+(parseFloat(txt1)/2) +"tsp   2 time/day"
+        document.getElementById("showBang").innerHTML = "kang la--- "+(parseFloat(txt1)/2) +"--tsp   2 time/day"
 
   }
   function myTID() {
 
          var txt1 = document.getElementById('txtResult3').value;
-        document.getElementById("showBang").innerHTML = "kang la"+(parseFloat(txt1)/3) +"tsp   3 time/day"
+        document.getElementById("showBang").innerHTML = "kang la---"+(parseFloat(txt1)/3) +"--tsp   3 time/day"
 
   }
   function myQID() {
 
          var txt1 = document.getElementById('txtResult3').value;
-        document.getElementById("showBang").innerHTML = "kang la "+(parseFloat(txt1)/4) +"tsp   4 time/day"
+        document.getElementById("showBang").innerHTML = "kang la--- "+(parseFloat(txt1)/4) +"--tsp   4 time/day"
 
   }
     </script>
@@ -103,13 +130,13 @@ document.getElementById("demo3").innerHTML = "1 eat";
          <p style="color:green"> Result  :</p>
            <input type="text" id="txtResult2"  size="5"   />  ml or
 
-              <input type="text" id="txtResult3" onkeyup="numberSw" size="5"  /> teaspoon
+              <input type="text" id="txtResult3" onkeyup="numberSw()" size="5"  /> teaspoon
               per <b id="demo3"></b>
         </div>
 
         <div style="padding-top:5px">
 
-          <button onclick="myBID()">BID</button>  <button onclick="myTID()">TID</button>  <button onclick="myQID()">QID</button>
+        button for per day only <button onclick="myBID()">BID</button>  <button onclick="myTID()">TID</button>  <button onclick="myQID()">QID</button>
 
 <p id="showBang"></p>
 
