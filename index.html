@@ -26,6 +26,7 @@
 
           }
             document.getElementById("showBang").innerHTML =""
+              document.getElementById('txtUnit').value = ""
 
         }
 
@@ -57,6 +58,7 @@
 
 
             document.getElementById("showBang").innerHTML =""
+              document.getElementById('txtUnit').value = ""
 
              //5 ml  120 mg
              //tsp*5 ml  .... mg
@@ -65,6 +67,14 @@
 
           function bottleCal() {
 
+            var myday = document.getElementById('txtDura').value;
+            var ju =  document.getElementById('txtkwamju').value;
+
+            var allML =  document.getElementById('txtResult2').value;
+
+            var result2 = parseFloat((allML*myday)/ju);
+
+            document.getElementById('txtUnit').value = result2;
 
 
         }
@@ -128,9 +138,9 @@ document.getElementById("demo3").innerHTML = "1 eat";
         <div style="padding-top:5px">
 
          <p style="color:green"> Result  :</p>
-           <input type="text" id="txtResult2"  size="5"   />  ml or
+           <input type="text" id="txtResult2"  size="6" readonly  />  ml or
 
-              <input type="text" id="txtResult3" onkeyup="numberSw()" size="5"  /> teaspoon
+              <input type="text" id="txtResult3" onkeyup="numberSw()" size="6"  /> teaspoon
               per <b id="demo3"></b>
         </div>
 
@@ -141,6 +151,16 @@ document.getElementById("demo3").innerHTML = "1 eat";
 <p id="showBang"></p>
 
         </div>
+
+          <div style="padding-top:5px">
+             <p style="color:blue"> Duration  :</p> <input type="text" id="txtDura"  size="5"   /> day
+             kwamJU <input type="text" id="txtkwamju" onkeyup="bottleCal()"  size="5"   /> ml
+                <br />
+                <br />
+             chai <input type="text" id="txtUnit"  size="5" readonly  />    unit
+
+          </div>
+
 
 
       </div>
